@@ -6,15 +6,20 @@ el usuario debe ingresar los valores de “a”, “b” y “c”
 """
 import math
 
-a = float(input("Ingrese el valor de a: "))
-b = float(input("Ingrese el valor de b: "))
-c = float(input("Ingrese el valor de c: "))
+a = 2 # float(input("Ingrese el valor de a: "))
+b = -9 # float(input("Ingrese el valor de b: "))
+c = 4 # float(input("Ingrese el valor de c: "))
 
-# Solucion positiva
-x = (-b + math.sqrt(((b * b) - (4 * a * c )))) / (2 * a)
+# Calcular discriminatnte
+discriminante = ((b * b) - (4 * a * c ))
 
-print("La solucion positiva es:", x)
+if(discriminante >= 0):
 
-x = (-b - math.sqrt(((b * b) - (4 * a * c )))) / (2 * a)
+    x = (-b + math.sqrt(discriminante)) / (2 * a) # Solucion positiva
+    print("La solucion positiva es:", x)
 
-print("La solucion negativa es:", x)
+    x = (-b - math.sqrt(discriminante)) / (2 * a) # Solucion negativa
+    print("La solucion negativa es:", x)
+
+else:
+    print(f"No hay soluciones reales, el discriminante: {discriminante} es negativo.")
